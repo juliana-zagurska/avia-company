@@ -1,27 +1,16 @@
 package out.planes;
 
-import out.planes.models.Airplane;
+import out.planes.model.abstractions.Airplane;
 
 import java.util.List;
 
-public class AviationCompany<T extends Airplane> {
-    List<T> airplaneList;
-    List<T> anotherList;
+public class AviationCompany {
+    List<Airplane> airplaneList;
 
-    public AviationCompany(List<T> airplanes, List<T> anotherList) {
+    public AviationCompany(List<Airplane> airplanes) {
         this.airplaneList = airplanes;
-        this.anotherList = anotherList;
     }
 
-    public Airplane getAirplaneByFuelConsumption(double fuelConsumption) {
-        Airplane airplane = null;
-        for (Airplane value : this.airplaneList) {
-            if (value.fuelConsumption == fuelConsumption) {
-                airplane = value;
-            }
-        }
-        return airplane;
-    }
 
     public int sumPassengerCapacity() {
         int sumPassengerCapacity = 0;
@@ -35,5 +24,15 @@ public class AviationCompany<T extends Airplane> {
         return this.airplaneList.stream()
                 .mapToDouble(airplane->airplane.tonnage)
                 .sum();
+    }
+
+    public Airplane findByFuelConsumption(double from, double to) {
+        Airplane wantToFind = null;
+        for (Airplane airplane: this.airplaneList) {
+            if (airplane.getFuelConsumption() == from || airplane.getFuelConsumption() == to) {
+                wantToFind = airplane;
+            }
+        }
+        return wantToFind;
     }
 }

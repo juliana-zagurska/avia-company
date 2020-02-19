@@ -1,6 +1,6 @@
 package out.planes;
 
-import out.planes.companies.Boeing;
+import out.planes.model.companies.Boeing;
 import out.planes.enums.Type;
 
 import java.util.ArrayList;
@@ -15,7 +15,6 @@ public class Main {
         List<Boeing> list = new ArrayList<>();
         list.add(boeing);
         list.add(boeing2);
-        Collections.sort(list);
         list.forEach(s-> System.out.println(s.flightRange));
 
     }

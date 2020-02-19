@@ -1,4 +1,4 @@
-package out.planes.models;
+package out.planes.model.abstractions;
 
 import out.planes.enums.Type;
 
@@ -26,6 +26,7 @@ public abstract class Airplane {
         return this.tonnage*FUEL_CONSUMPTION_LOW_COEF;
     }
 
-
+    public abstract Double getFlightRange();
+    public abstract double getFuelConsumption();
 
 }
