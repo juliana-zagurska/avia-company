@@ -6,7 +6,7 @@
 
 
 
-    <groupId>groupId</groupId>
+    <groupId>ua.testing</groupId>
     <artifactId>avia-company</artifactId>
     <version>1.0-SNAPSHOT</version>
 
